@@ -1,17 +1,17 @@
 local HttpService = game:GetService("HttpService")
 
-if not isfolder("StreeHub") then
-    makefolder("StreeHub")
+if not isfolder("Noxius") then
+    makefolder("Noxius")
 end
-if not isfolder("StreeHub/Config") then
-    makefolder("StreeHub/Config")
+if not isfolder("Noxius/Config") then
+    makefolder("Noxius/Config")
 end
 
 local gameName = tostring(game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
 gameName = gameName:gsub("[^%w_ ]", "")
 gameName = gameName:gsub("%s+", "_")
 
-local ConfigFile = "StreeHub/Config/StreeHub_" .. gameName .. ".json"
+local ConfigFile = "Noxius/Config/Noxius_" .. gameName .. ".json"
 
 ConfigData = {}
 Elements = {}
@@ -268,11 +268,11 @@ function CircleClick(Button, X, Y)
     end)
 end
 
-local StreeHub = {}
+local Noxius = {}
 
-function StreeHub:MakeNotify(NotifyConfig)
+function Noxius:MakeNotify(NotifyConfig)
     local NotifyConfig = NotifyConfig or {}
-    NotifyConfig.Title = NotifyConfig.Title or "StreeHub"
+    NotifyConfig.Title = NotifyConfig.Title or "Noxius"
     NotifyConfig.Description = NotifyConfig.Description or "Notification"
     NotifyConfig.Content = NotifyConfig.Content or "Content"
     NotifyConfig.Color = NotifyConfig.Color or Color3.fromRGB(57, 255, 20)
@@ -463,10 +463,10 @@ function StreeHub:MakeNotify(NotifyConfig)
     return NotifyFunction
 end
 
-function StreeHub:Window(GuiConfig)
+function Noxius:Window(GuiConfig)
     GuiConfig = GuiConfig or {}
-    GuiConfig.Title = GuiConfig.Title or "StreeHub"
-    GuiConfig.Footer = GuiConfig.Footer or "StreeHub"
+    GuiConfig.Title = GuiConfig.Title or "Noxius"
+    GuiConfig.Footer = GuiConfig.Footer or "Noxius"
     GuiConfig.Color = GuiConfig.Color or Color3.fromRGB(190, 70, 255)   
     GuiConfig["Tab Width"] = GuiConfig["Tab Width"] or 120
     GuiConfig.Version = GuiConfig.Version or 1
@@ -479,7 +479,7 @@ function StreeHub:Window(GuiConfig)
     local GuiFunc = {}
     local Tabs = {}
 
-    local StreeHubUI = Instance.new("ScreenGui")
+    local NoxiusUI = Instance.new("ScreenGui")
     local DropShadowHolder = Instance.new("Frame")
     local DropShadow = Instance.new("ImageLabel")
     local Main = GuiConfig.Theme and Instance.new("ImageLabel") or Instance.new("Frame")
@@ -511,10 +511,10 @@ function StreeHub:Window(GuiConfig)
     local LayersFolder = Instance.new("Folder")
     local LayersPageLayout = Instance.new("UIPageLayout")
 
-    StreeHubUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    StreeHubUI.Name = "StreeHub"
-    StreeHubUI.ResetOnSpawn = false
-    StreeHubUI.Parent = game:GetService("CoreGui")
+    NoxiusUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    NoxiusUI.Name = "Noxius"
+    NoxiusUI.ResetOnSpawn = false
+    NoxiusUI.Parent = game:GetService("CoreGui")
 
     DropShadowHolder.BackgroundTransparency = 1
     DropShadowHolder.BorderSizePixel = 0
@@ -529,7 +529,7 @@ function StreeHub:Window(GuiConfig)
     
     DropShadowHolder.ZIndex = 0
     DropShadowHolder.Name = "DropShadowHolder"
-    DropShadowHolder.Parent = StreeHubUI
+    DropShadowHolder.Parent = NoxiusUI
 
     DropShadow.Image = "rbxassetid://6015897843"
     DropShadow.ImageColor3 = Color3.fromRGB(15, 15, 15)
@@ -742,8 +742,8 @@ function StreeHub:Window(GuiConfig)
     ScrollTab.ChildRemoved:Connect(UpdateSize1)
 
     function GuiFunc:DestroyGui()
-        if CoreGui:FindFirstChild("StreeHub") then
-            StreeHubUI:Destroy()
+        if CoreGui:FindFirstChild("Noxius") then
+            NoxiusUI:Destroy()
         end
     end
 
@@ -801,7 +801,7 @@ function StreeHub:Window(GuiConfig)
         Title.Position = UDim2.new(0, 0, 0, 4)
         Title.BackgroundTransparency = 1
         Title.Font = Enum.Font.GothamBold
-        Title.Text = "StreeHub Window"
+        Title.Text = "Noxius Window"
         Title.TextSize = 22
         Title.TextColor3 = Color3.fromRGB(255, 255, 255)
         Title.ZIndex = 52
@@ -850,7 +850,7 @@ function StreeHub:Window(GuiConfig)
         Instance.new("UICorner", Cancel).CornerRadius = UDim.new(0, 6)
 
         Yes.MouseButton1Click:Connect(function()
-            StreeHubUI:Destroy()
+            NoxiusUI:Destroy()
         end)
 
         Cancel.MouseButton1Click:Connect(function()
@@ -2570,18 +2570,18 @@ function StreeHub:Window(GuiConfig)
         return Sections
     end
 
-    local StreeHubButton = Instance.new("ScreenGui")
+    local NoxiusButton = Instance.new("ScreenGui")
     local Button = Instance.new("ImageButton")
     local Corner = Instance.new("UICorner")
     local Scale = Instance.new("UIScale")
 
-    StreeHubButton.Name = "StreeHubButton"
-    StreeHubButton.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    StreeHubButton.ResetOnSpawn = false
-    StreeHubButton.Parent = game:GetService('CoreGui')
+    NoxiusButton.Name = "NoxiusButton"
+    NoxiusButton.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    NoxiusButton.ResetOnSpawn = false
+    NoxiusButton.Parent = game:GetService('CoreGui')
 
-    Button.Name = 'StreeHub'
-    Button.Parent = StreeHubButton
+    Button.Name = 'Noxius'
+    Button.Parent = NoxiusButton
     Button.BackgroundTransparency = 1
     Button.Size = UDim2.new(0, 60, 0, 60)
     Button.Position = UDim2.new(0, 10, 0, 60)
@@ -2620,8 +2620,8 @@ function StreeHub:Window(GuiConfig)
         if callback then
             Close.Activated:Connect(function()
                 callback()
-                if StreeHubUI then
-                    StreeHubUI:Destroy()
+                if NoxiusUI then
+                    NoxiusUI:Destroy()
                 end
             end)
         end
@@ -2638,4 +2638,4 @@ end
 
 LoadConfigElements()
 
-return StreeHub
+return Noxius
