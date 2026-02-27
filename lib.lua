@@ -238,7 +238,7 @@ function CircleClick(Button, X, Y)
         Button.ClipsDescendants = true
         local Circle = Instance.new("ImageLabel")
         Circle.Image = "rbxassetid://77194008928196"
-        Circle.ImageColor3 = Color3.fromRGB(190, 70, 255)  
+        Circle.ImageColor3 = Color3.fromRGB(210, 80, 255)  
         Circle.ImageTransparency = 0.8999999761581421
         Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         Circle.BackgroundTransparency = 1
@@ -275,7 +275,7 @@ function Noxius:MakeNotify(NotifyConfig)
     NotifyConfig.Title = NotifyConfig.Title or "Noxius"
     NotifyConfig.Description = NotifyConfig.Description or "Notification"
     NotifyConfig.Content = NotifyConfig.Content or "Content"
-    NotifyConfig.Color = NotifyConfig.Color or Color3.fromRGB(57, 255, 20)
+    NotifyConfig.Color = NotifyConfig.Color or Color3.fromRGB(200, 60, 255)  
     NotifyConfig.Time = NotifyConfig.Time or 0.5
     NotifyConfig.Delay = NotifyConfig.Delay or 5
     local NotifyFunction = {}
@@ -467,7 +467,7 @@ function Noxius:Window(GuiConfig)
     GuiConfig = GuiConfig or {}
     GuiConfig.Title = GuiConfig.Title or "Noxius"
     GuiConfig.Footer = GuiConfig.Footer or "Noxius"
-    GuiConfig.Color = GuiConfig.Color or Color3.fromRGB(190, 70, 255)   
+    GuiConfig.Color = Color3.fromRGB(200, 60, 255)  
     GuiConfig["Tab Width"] = GuiConfig["Tab Width"] or 120
     GuiConfig.Version = GuiConfig.Version or 1
     GuiConfig.Theme = GuiConfig.Theme
